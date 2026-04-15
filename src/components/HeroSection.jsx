@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { BlurText } from "./ui/portfolio-hero";
+import { RevealText } from "./ui/reveal-text";
 import { useCountUp } from "../hooks/useCountUp";
 
 // ── helpers ────────────────────────────────────────────────────────────────
@@ -214,24 +215,13 @@ export function HeroSection({ hero, navigation }) {
         {/* Name + photo block — fills viewport width like the reference */}
         <div style={{ position: "relative", width: "100%", lineHeight: 0, overflow: "visible" }}>
           {/* First name */}
-          <BlurText
+          <RevealText
             text="RANJITH"
-            delay={80}
             startDelay={0}
-            animateBy="letters"
-            direction="top"
-            className="justify-center whitespace-nowrap"
-            style={{
-              fontFamily: "'Fira Code', monospace",
-              fontWeight: 700,
-              fontSize: "clamp(4.5rem, 17.5vw, 17rem)",
-              lineHeight: 0.88,
-              letterSpacing: "-0.03em",
-              color: "#C3E41D",
-              display: "flex",
-              margin: 0,
-              padding: 0,
-            }}
+            letterDelay={0.08}
+            fontSize="clamp(4.5rem, 17.5vw, 17rem)"
+            textColor="#C3E41D"
+            overlayColor="#ffffff"
           />
 
           {/* Profile photo — absolutely centred over both name rows */}
@@ -266,25 +256,14 @@ export function HeroSection({ hero, navigation }) {
             />
           </div>
 
-          {/* Last name — starts after RANJITH finishes (7 letters × 80ms + 500ms transition) */}
-          <BlurText
+          {/* Last name — starts after RANJITH finishes */}
+          <RevealText
             text="ANTHOTI"
-            delay={80}
-            startDelay={1060}
-            animateBy="letters"
-            direction="top"
-            className="justify-center whitespace-nowrap"
-            style={{
-              fontFamily: "'Fira Code', monospace",
-              fontWeight: 700,
-              fontSize: "clamp(4.5rem, 17.5vw, 17rem)",
-              lineHeight: 0.88,
-              letterSpacing: "-0.03em",
-              color: "#C3E41D",
-              display: "flex",
-              margin: 0,
-              padding: 0,
-            }}
+            startDelay={1.1}
+            letterDelay={0.08}
+            fontSize="clamp(4.5rem, 17.5vw, 17rem)"
+            textColor="#C3E41D"
+            overlayColor="#ffffff"
           />
         </div>
 
