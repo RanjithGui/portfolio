@@ -1,9 +1,10 @@
-/* Tailwind v4 — skip preflight to avoid conflicts with existing CSS */
-@import "tailwindcss/theme" layer(theme);
-@import "tailwindcss/utilities" layer(utilities);
+/* Tailwind v3 — preflight disabled in tailwind.config.js to avoid CSS conflicts */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Custom animation for Spotlight component */
-@theme {
+:root {
   --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
 }
 
