@@ -1,0 +1,174 @@
+/* ─── Horizon Hero — all classes prefixed .hhero- or .horizon-root ─────────── */
+
+.horizon-root {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #000;
+  color: #fff;
+  font-family: "Syne", "Manrope", sans-serif;
+}
+
+/* Canvas fills the viewport height of the root element */
+.hhero-canvas {
+  position: sticky;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+}
+
+/* ── Side menu ─────────────────────────────────────────────────────────────── */
+.hhero-side-menu {
+  position: fixed;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hhero-menu-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hhero-menu-icon span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hhero-vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
+
+/* ── Overlay content (fixed over canvas) ───────────────────────────────────── */
+.hhero-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  pointer-events: none;
+  padding: 2rem;
+}
+
+.hhero-title {
+  font-size: clamp(3.5rem, 10vw, 9rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1;
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.6) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  overflow: hidden;
+}
+
+.hhero-char {
+  display: inline-block;
+}
+
+.hhero-subtitle {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.hhero-sub-line {
+  font-size: clamp(0.9rem, 1.5vw, 1.15rem);
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.05em;
+  margin: 0.3rem 0;
+  line-height: 1.6;
+}
+
+/* ── Scroll progress bar ────────────────────────────────────────────────────── */
+.hhero-scroll-progress {
+  position: fixed;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.hhero-scroll-text {
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+}
+
+.hhero-progress-track {
+  width: 120px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.hhero-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, rgba(103, 232, 249, 0.9), rgba(124, 140, 255, 0.9));
+  border-radius: 1px;
+  transition: width 0.1s linear;
+}
+
+.hhero-section-counter {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.3);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Scrollable sections (stacked behind the canvas) ───────────────────────── */
+.hhero-scroll-sections {
+  position: relative;
+  z-index: 5;
+}
+
+.hhero-content-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* ── Mobile ─────────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hhero-side-menu {
+    left: 1rem;
+  }
+
+  .hhero-title {
+    font-size: clamp(2.5rem, 15vw, 5rem);
+  }
+}
