@@ -6,6 +6,7 @@ import { AboutSection } from "./components/AboutSection";
 import { ProjectsSection } from "./components/ProjectsSection";
 import { ResumeSection } from "./components/ResumeSection";
 import { ContactSection } from "./components/ContactSection";
+import { SkillsSection } from "./components/SkillsSection";
 import { portfolioData } from "./data/portfolioData";
 import { useRevealOnScroll } from "./hooks/useRevealOnScroll";
 import { useTiltCards } from "./hooks/useTiltCards";
@@ -46,6 +47,7 @@ export default function App() {
         <ProjectsSection projects={portfolioData.projects} />
         <ResumeSection resume={portfolioData.resume} />
         <ContactSection contact={portfolioData.contact} />
+        <SkillsSection />
       </main>
       <ScrollToTop />
     </>

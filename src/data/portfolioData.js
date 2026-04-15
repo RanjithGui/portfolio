@@ -3,7 +3,8 @@ export const portfolioData = {
     { label: "About", href: "#about" },
     { label: "Projects", href: "#projects" },
     { label: "Resume", href: "#resume" },
-    { label: "Contact", href: "#contact" }
+    { label: "Contact", href: "#contact" },
+    { label: "Skills", href: "#skills" }
   ],
   hero: {
     eyebrow: "Senior Android Developer • Bengaluru, India",
